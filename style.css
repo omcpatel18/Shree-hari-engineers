@@ -1,0 +1,364 @@
+/* =========================================
+   🌐 Global Styles
+   ========================================= */
+:root {
+  --primary-color: #004aad; /* Company main color */
+  --secondary-color: #ff6b35; /* Accent color */
+  --dark-color: #1a1a1a;
+  --light-color: #f5f5f5;
+  --text-color: #333;
+  --max-width: 1200px;
+  --font-main: 'Poppins', sans-serif;
+  --transition: all 0.3s ease-in-out;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-main);
+  color: var(--text-color);
+  background-color: #fff;
+  line-height: 1.6;
+}
+
+/* =========================================
+   🧭 Reusable Utilities
+   ========================================= */
+.container {
+  width: 90%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.section {
+  padding: 80px 0;
+}
+
+h1, h2, h3 {
+  color: var(--dark-color);
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+p {
+  font-size: 1rem;
+  margin-bottom: 15px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: var(--transition);
+}
+
+/* =========================================
+   🔝 Header + Navbar
+   ========================================= */
+header {
+  background: linear-gradient(90deg, #1a1a1a 0%, #2d2d2d 100%);
+  color: #fff;
+  padding: 15px 0;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.navbar .logo {
+  display: flex;
+  /* flex-grow: 1; */
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+.navbar .logo .icon {
+  height: 50px;
+  box-sizing: border-box;
+  border: solid 2px #ff6b35;
+  padding: 2px;
+  border-radius: 50%;
+}
+.navbar .logo .icon img {
+  background-color: white;
+  max-width: 100%;
+  max-height: 100%;
+  height: auto;
+  width: auto;
+  border-radius: 50%; 
+}
+
+.navbar .logo .logo-text-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.navbar .logo .logo-text-container .first-name {
+  font-family: 'Oswald', sans-serif;
+  font-size: 42px;
+  font-weight: 700;
+  color: white;
+  letter-spacing: 2px;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.navbar .logo .logo-text-container .second-name {
+  font-family: 'Oswald', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  color: #ff6b35;
+  letter-spacing: 1px;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.nav-links a {
+  color: #fff;
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.nav-links a:hover,
+.nav-links .active {
+  color: var(--secondary-color);
+}
+
+/* =========================================
+   🏠 Hero Section
+   ========================================= */
+   
+.hero {
+  background: linear-gradient(
+      rgba(0, 0, 0, 0.6),
+      rgba(0, 0, 0, 0.6)
+    ),
+    url('../assets/hero-bg.jpg') center/cover no-repeat;
+  color: #fff;
+  width: 100%;
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.video-container {
+  position: relative;
+  width: 100%;
+  height: 90vh;
+  overflow: hidden;
+}
+
+ .hero-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -1;
+  transform: translate(-50%, -50%);
+  filter: brightness(0.7);
+  object-fit: fill;
+} 
+
+.hero-content {
+  max-width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.hero h1 {
+  font-size: 2.8rem;
+  margin-bottom: 20px;
+  color: #ff6b35;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+.btn-primary {
+  background: #ff6b35;
+  color: #fff;
+  padding: 12px 28px;
+  border-radius: 5px;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.btn-primary:hover {
+  background: white;
+  color: #ff6b35;
+} 
+
+/* =========================================
+   🏢 About Section
+   ========================================= */
+.about p {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+/* =========================================
+   ⚙️ Services Section
+   ========================================= */
+.services .service-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  margin-top: 40px;
+}
+
+.card {
+  background: var(--light-color);
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  transition: var(--transition);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+}
+
+/* =========================================
+   📸 Projects Section
+   ========================================= */
+.project-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.project-gallery img {
+  width: 100%;
+  border-radius: 10px;
+  transition: var(--transition);
+}
+
+.project-gallery img:hover {
+  transform: scale(1.05);
+}
+
+/* =========================================
+   📞 Contact Section
+   ========================================= */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-family: var(--font-main);
+  font-size: 1rem;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: 2px solid var(--primary-color);
+}
+
+/* =========================================
+   ⚙️ Footer
+   ========================================= */
+footer {
+  background: linear-gradient(90deg, #1a1a1a 0%, #2d2d2d 100%);
+  color: #ccc;
+  padding: 30px 0;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.footer-links {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  margin-top: 10px;
+}
+
+.footer-links a {
+  color: #ccc;
+  font-size: 0.9rem;
+}
+
+.footer-links a:hover {
+  color: var(--secondary-color);
+}
+
+/* =========================================
+   📱 Responsive Design
+   ========================================= */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .section {
+    padding: 60px 0;
+  }
+}
