@@ -240,8 +240,11 @@ header {
   margin: 0 auto;
   text-align: center;
   font-size: 1.1rem;
+  text-align: justify;
 }
-
+.about p:last-child {
+  margin-bottom: 0;
+}
 /* =========================================
    ⚙️ Services Section
    ========================================= */
