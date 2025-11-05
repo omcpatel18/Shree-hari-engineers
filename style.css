@@ -242,9 +242,35 @@ header {
   font-size: 1.1rem;
   text-align: justify;
 }
-.about p:last-child {
-  margin-bottom: 0;
+
+.container p:last-of-type {
+  margin-top: 10px;
+  cursor: pointer;
+  transition: color 1s ease;
 }
+
+.container p:last-of-type:hover {
+  color: transparent;
+  background: linear-gradient(90deg, #ff6b35 70%, #1a1a1a 30%);
+  background-size: 200%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: gradientMove 10s linear infinite;
+  transition: color 1s ease;
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
 /* =========================================
    ⚙️ Services Section
    ========================================= */
