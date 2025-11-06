@@ -1,96 +1,205 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Looping Background Videos</title>
-  <style>
-    /* ... (CSS is fine, no changes needed) ... */
-    body, html {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-      overflow: hidden;
-      background: black;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Shree Hari Engineers</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    #video-background {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      z-index: -1;
-    }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f8fafc 0%, #e0e7ff 100%);
+            min-height: 100vh;
+            padding: 60px 20px;
+        }
 
-    .content {
-      position: relative;
-      z-index: 1;
-      color: white;
-      text-align: center;
-      top: 40%;
-      font-family: Arial, sans-serif;
-      font-size: 2rem;
-    }
-  </style>
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 60px;
+            animation: fadeInDown 0.8s ease-out;
+        }
+
+        .header h1 {
+            font-size: 3.5rem;
+            color: #1a3a52;
+            margin-bottom: 15px;
+            font-weight: 700;
+            letter-spacing: -1px;
+        }
+
+        .header-line {
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, #ff6b35, #f7931e);
+            margin: 0 auto;
+        }
+
+        .content-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+            animation: fadeIn 1s ease-out 0.3s both;
+        }
+
+        .image-section {
+            position: relative;
+            display: flex;
+            justify-content: center;
+        }
+
+        .image-container {
+            position: relative;
+            width: 100%;
+            max-width: 450px;
+        }
+
+        .image-section img {
+            width: 100%;
+            border-radius: 25px;
+            box-shadow: 0 25px 70px rgba(255, 107, 53, 0.2);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            object-fit: cover;
+            height: 450px;
+            border: 5px solid rgba(255, 107, 53, 0.15);
+            display: block;
+        }
+
+        .image-section img:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: 0 35px 90px rgba(255, 107, 53, 0.35);
+        }
+
+        .text-section {
+            color: #2d3e50;
+            line-height: 1.9;
+            animation: fadeInUp 1s ease-out 0.5s both;
+        }
+
+        .text-section p {
+            font-size: 1.08rem;
+            margin-bottom: 28px;
+            text-align: justify;
+            color: #34495e;
+            letter-spacing: 0.4px;
+        }
+
+        .highlight {
+            background: linear-gradient(120deg, rgba(255, 107, 53, 0.15) 0%, rgba(247, 147, 30, 0.15) 100%);
+            padding: 2px 6px;
+            color: #ff6b35;
+            font-weight: 700;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .text-section p:hover .highlight {
+            background: linear-gradient(120deg, rgba(255, 107, 53, 0.25) 0%, rgba(247, 147, 30, 0.25) 100%);
+        }
+
+        .cta-text {
+            font-size: 1.35rem;
+            color: #1a3a52;
+            font-weight: 700;
+            margin-top: 35px;
+            font-style: italic;
+            padding: 20px;
+            border-left: 5px solid #ff6b35;
+            background: rgba(255, 107, 53, 0.08);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .cta-text:hover {
+            background: rgba(255, 107, 53, 0.12);
+            transform: translateX(10px);
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .content-wrapper {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .header h1 {
+                font-size: 2.5rem;
+            }
+
+            .text-section p {
+                font-size: 1rem;
+            }
+
+            .image-section img {
+                height: 350px;
+            }
+        }
+    </style>
 </head>
 <body>
-  <video id="video-background" autoplay muted playsinline>
-    <source src="resources/videos/video1.mp4" type="video/mp4">
-    <source src="resources/videos/video2.mp4" type="video/mp4">
-    <source src="resources/videos/video3.mp4" type="video/mp4">
-    <source src="resources/videos/video4.mp4" type="video/mp4">
-  </video>
-  <div class="content">
-    <h1>Welcome to My Site</h1>
-    <p>Background videos playing one by one</p>
-  </div>
+    <div class="container">
+        <div class="header">
+            <h1>About Us</h1>
+            <div class="header-line"></div>
+        </div>
 
-  <script>
-    // Array of video paths
-    const videos = [
-      // Array of video paths
-        "resources/videos/video1.mp4",
-        "resources/videos/video2.mp4",
-        "resources/videos/video3.mp4",
-        "resources/videos/video4.mp4",
-    ];
+        <div class="content-wrapper">
+            <div class="image-section">
+                <div class="image-container">
+                    <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=600&h=450&fit=crop" alt="Shree Hari Engineers facility">
+                </div>
+            </div>
 
-    let currentVideo = 0;
-    const videoElement = document.getElementById("video-background");
+            <div class="text-section">
+                <p>At Shree Hari Engineers, <span class="highlight">your vision inspires us</span>—every project starts with your ambition, and together, we transform ideas into reality. At our machining shop, we don't just deliver precision and quality; we become <span class="highlight">partners in your progress</span>, fueling innovation and building pathways to your success.</p>
 
-    // Function to play the video at the current index
-    function playNextVideo() {
-      // 1. Set the source
-      videoElement.src = videos[currentVideo];
-      
-      // 2. Load the new source
-      // Note: .load() is only necessary if the video source has changed 
-      // and you want to ensure the browser reloads it.
-      videoElement.load(); 
-      
-      // 3. Attempt to play
-      // The Promise from .play() handles common mobile browser restrictions
-      videoElement.play().catch(error => {
-          console.error("Autoplay failed:", error);
-          // If autoplay fails (e.g., due to browser policy), you might
-          // want to show a button for the user to initiate play.
-      });
-    }
+                <p>We thrive on challenge and embrace change, investing in the latest technology and our own growth so we can empower yours. Our team is driven by <span class="highlight">curiosity and purpose</span>, always seeking new ways to solve problems and elevate your experience.</p>
 
-    // --- LOGIC FIX HERE: Set the event listener ONCE ---
-    videoElement.onended = () => {
-      // 1. Move to the next index, looping back to 0 if needed
-      currentVideo = (currentVideo + 1) % videos.length; 
-      
-      // 2. Play the new video
-      playNextVideo();
-    };
+                <p>Trust is at the heart of everything we do. We celebrate your milestones, share your challenges, and commit to being there—reliably, consistently, passionately—every step of your journey.</p>
 
-    // Start the whole sequence
-    // This will set videoElement.src to video1.mp4 and then fire the .play()
-    playNextVideo();
-  </script>
+                <p class="cta-text">Let's build more than parts. Let's craft a future—together.</p>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

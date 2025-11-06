@@ -235,21 +235,64 @@ header {
 /* =========================================
    🏢 About Section
    ========================================= */
-.about p {
-  max-width: 800px;
-  margin: 0 auto;
-  text-align: center;
+
+.about-section {
+  margin-top: 100px;
+}
+.about-section .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  margin-top: 50px;
+}
+
+.about-content{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+}
+
+.about-content img{
+  flex: 3;
+  height: 500px;
+  width: auto;
+  box-sizing: border-box;
+  border-radius: 15px;
+  align-content: center;
+  justify-self: center;
+  align-self: center;
+}
+
+.about-content .about-text {
+  /* flex: 7;
+  margin-left: 100px; */
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  text-align: justify;
+}
+
+.about-content h2 {
+  font-size: 2.2rem;
+  text-align: left;
+}
+
+.about-content p  {
+  max-width: 550px;
+  /* margin: 0 auto; */
+  display: flex;
   font-size: 1.1rem;
   text-align: justify;
 }
 
-.container p:last-of-type {
+.about-content p:last-of-type {
   margin-top: 10px;
   cursor: pointer;
   transition: color 1s ease;
 }
 
-.container p:last-of-type:hover {
+.about-content p:last-of-type:hover {
   color: transparent;
   background: linear-gradient(90deg, #ff6b35 70%, #1a1a1a 30%);
   background-size: 200%;
@@ -277,21 +320,60 @@ header {
 .services .service-cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 25px;
+  gap: 30px;
   margin-top: 40px;
 }
 
 .card {
   background: var(--light-color);
-  padding: 25px;
+  overflow: hidden;
   border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-  transition: var(--transition);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
 }
 
 .card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+}
+
+.card:hover .card-description {
+  opacity: 1;
+}
+
+.card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  display: block;
+}
+
+.card-content {
+  padding: 20px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(to top,rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 60%, transparent 100%);
+  color: white; 
+}
+
+.card-description{
+  font-size: 14px;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 15px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.card-title {
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 10px;
 }
 
 /* =========================================
