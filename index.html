@@ -136,27 +136,35 @@
   <!-- ============================= -->
   <!-- 📞 Contact Section -->
   <!-- ============================= -->
-  <section id="contact" class="contact section">
-    <div class="container">
-      <h2>Contact Us</h2>
-      <form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
-        <input type="hidden" name="access_key" value="9ba01ef9-b948-47f9-8dfa-d223e1edecd2" />
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required />
+ <section id="contact" class="contact section">
+  <div class="container">
+    <h2>Contact Us</h2>
 
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required />
+    <form id="contactForm" class="contact-form">
+      <!-- Web3Forms hidden fields -->
+      <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE" />
+      <input type="hidden" name="subject" value="New Contact Form Submission" />
+      <input type="hidden" name="from_name" value="Your Website" />
 
-        <label for="phone-no">Phone Number:</label>
-        <input type="tel" id="phone-no" name="phone-no" />
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required />
 
-        <label for="message">Message:</label>
-        <textarea id="message" name="message" rows="5" required></textarea>
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required />
 
-        <button type="submit" class="btn-primary">Send Message</button>
-      </form>
-    </div>
-  </section>
+      <label for="phone">Phone Number:</label>
+      <input type="tel" id="phone" name="phone" />
+
+      <label for="message">Message:</label>
+      <textarea id="message" name="message" rows="5" required></textarea>
+
+      <button type="submit" id="submitBtn" class="btn-primary">Send Message</button>
+
+      <p id="formStatus" style="margin-top:10px; display:none;"></p>
+    </form>
+  </div>
+</section>
+
 
   <!-- ============================= -->
   <!-- ⚙️ Footer -->

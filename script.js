@@ -1,22 +1,23 @@
-
   const form = document.getElementById("contactForm");
   const submitBtn = document.getElementById("submitBtn");
   const statusEl = document.getElementById("formStatus");
 
-  // Your WhatsApp number (WITHOUT +)
-  const whatsappNumber = "918320673087";  // ← Replace with your number
+  // Your WhatsApp number (with country code, WITHOUT + or spaces)
+  const whatsappNumber = "918320673087"; // e.g. 91xxxxxxxxxx
 
   form.addEventListener("submit", async function (e) {
-    e.preventDefault(); // Stop page reload
+    e.preventDefault(); // Prevent normal form submission
 
     submitBtn.disabled = true;
     submitBtn.textContent = "Sending...";
 
-    // Prepare form data
+    statusEl.style.display = "none";
+    statusEl.textContent = "";
+
     const formData = new FormData(form);
 
     try {
-      // 1) Send to Web3Forms (EMAIL)
+      // 1) Send data to Web3Forms → Email (Gmail)
       const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
         body: formData
@@ -25,14 +26,14 @@
       const result = await response.json();
 
       if (response.ok && result.success) {
-        // 2) Create WhatsApp message
+        // 2) Build WhatsApp message text
         const name = form.name.value;
         const email = form.email.value;
         const phone = form.phone.value;
         const message = form.message.value;
 
-        const whatsappText = 
-`📩 New Website Inquiry:
+        const whatsappText =
+`📩 New Website Inquiry
 
 👤 Name: ${name}
 📧 Email: ${email}
@@ -40,11 +41,11 @@
 💬 Message:
 ${message}`;
 
-        const waURL = `https://wa.me/${918320673087}?text=${encodeURIComponent(whatsappText)}`;
-
+        // 3) Open WhatsApp chat to your number
+        const waURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappText)}`;
         window.open(waURL, "_blank");
 
-        // 3) Show success
+        // 4) Show success status
         statusEl.style.display = "block";
         statusEl.style.color = "green";
         statusEl.textContent = "Thank you! Your message has been sent.";
@@ -55,7 +56,6 @@ ${message}`;
       }
     } catch (error) {
       console.error(error);
-
       statusEl.style.display = "block";
       statusEl.style.color = "red";
       statusEl.textContent = "Error sending message. Please try again.";
