@@ -80,7 +80,7 @@
             Let&rsquo;s build more than parts. Let&rsquo;s craft a future—together.
           </p>
         </div>
-      </div>
+      </div>~
     </div>
   </section>
 
@@ -139,12 +139,16 @@
   <section id="contact" class="contact section">
     <div class="container">
       <h2>Contact Us</h2>
-      <form action="contact-form-handler.php" method="POST" class="contact-form">
+      <form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
+        <input type="hidden" name="access_key" value="9ba01ef9-b948-47f9-8dfa-d223e1edecd2" />
         <label for="name">Name:</label>
         <input type="text" id="name" name="name" required />
 
         <label for="email">Email:</label>
         <input type="email" id="email" name="email" required />
+
+        <label for="phone-no">Phone Number:</label>
+        <input type="tel" id="phone-no" name="phone-no" />
 
         <label for="message">Message:</label>
         <textarea id="message" name="message" rows="5" required></textarea>
