@@ -1,12 +1,14 @@
+
   const form = document.getElementById("contactForm");
   const submitBtn = document.getElementById("submitBtn");
   const statusEl = document.getElementById("formStatus");
 
   // Your WhatsApp number (with country code, WITHOUT + or spaces)
-  const whatsappNumber = "918320673087"; // e.g. 91xxxxxxxxxx
+  // Example: "919876543210"
+  const whatsappNumber = "918320673087"; // ← replace with your number
 
   form.addEventListener("submit", async function (e) {
-    e.preventDefault(); // Prevent normal form submission
+    e.preventDefault(); // prevent normal browser submit
 
     submitBtn.disabled = true;
     submitBtn.textContent = "Sending...";
@@ -17,39 +19,42 @@
     const formData = new FormData(form);
 
     try {
-      // 1) Send data to Web3Forms → Email (Gmail)
+      // 1) Send data to Web3Forms → email (to your Gmail)
       const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
-        body: formData
+        body: formData,
       });
 
       const result = await response.json();
 
       if (response.ok && result.success) {
-        // 2) Build WhatsApp message text
+        // 2) Minimal info for WhatsApp (no full message in URL)
         const name = form.name.value;
-        const email = form.email.value;
         const phone = form.phone.value;
-        const message = form.message.value;
+        const email = form.email.value;
 
         const whatsappText =
-`📩 New Website Inquiry
+`New inquiry from website.
 
-👤 Name: ${name}
-📧 Email: ${email}
-📱 Phone: ${phone}
-💬 Message:
-${message}`;
+Name: ${name}
+Phone: ${phone || "Not provided"}
+Email: ${email}
 
-        // 3) Open WhatsApp chat to your number
-        const waURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappText)}`;
+Full details are in your Gmail inbox.`;
+
+        const waURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
+          whatsappText
+        )}`;
+
+        // Open WhatsApp chat in new tab/window
         window.open(waURL, "_blank");
 
-        // 4) Show success status
+        // 3) Show success message on website
         statusEl.style.display = "block";
         statusEl.style.color = "green";
         statusEl.textContent = "Thank you! Your message has been sent.";
 
+        // Clear form
         form.reset();
       } else {
         throw new Error(result.message || "Form submission failed.");
@@ -64,3 +69,4 @@ ${message}`;
       submitBtn.textContent = "Send Message";
     }
   });
+

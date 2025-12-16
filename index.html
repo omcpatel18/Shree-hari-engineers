@@ -136,13 +136,18 @@
   <!-- ============================= -->
   <!-- 📞 Contact Section -->
   <!-- ============================= -->
- <section id="contact" class="contact section">
+<section id="contact" class="contact section">
   <div class="container">
     <h2>Contact Us</h2>
 
-    <form id="contactForm" class="contact-form">
+    <form
+      id="contactForm"
+      class="contact-form"
+      action="https://api.web3forms.com/submit"
+      method="POST"
+    >
       <!-- Web3Forms hidden fields -->
-      <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE" />
+      <input type="hidden" name="access_key" value="9ba01ef9-b948-47f9-8dfa-d223e1edecd2" />
       <input type="hidden" name="subject" value="New Contact Form Submission" />
       <input type="hidden" name="from_name" value="Your Website" />
 
@@ -158,9 +163,11 @@
       <label for="message">Message:</label>
       <textarea id="message" name="message" rows="5" required></textarea>
 
-      <button type="submit" id="submitBtn" class="btn-primary">Send Message</button>
+      <button type="submit" id="submitBtn" class="btn-primary">
+        Send Message
+      </button>
 
-      <p id="formStatus" style="margin-top:10px; display:none;"></p>
+      <p id="formStatus" style="margin-top: 10px; display: none;"></p>
     </form>
   </div>
 </section>
