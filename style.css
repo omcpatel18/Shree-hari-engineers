@@ -207,7 +207,7 @@ header {
 }
 
 .hero h1 {
-  font-size: 5.0rem;
+  font-size: 4rem;
   margin-bottom: 20px;
   color: #ff6b35;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -215,7 +215,7 @@ header {
 }
 
 .hero p {
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   margin-bottom: 30px;
   margin-left: auto;
   margin-right: auto;
@@ -223,7 +223,6 @@ header {
   text-align: center;
   color: rgb(190, 176, 176);
 }
-
 
 /* Buttons */
 .btn-primary {
@@ -267,7 +266,7 @@ header {
   font-size: 1rem;
   font-weight: 250;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  margin-bottom: 40px;
+  margin-bottom: 0.7rem;
 }
 
 /* Badge styling for About Us section */
@@ -284,6 +283,17 @@ header {
   font-weight: 600;
 }
 
+/* Badge styling for Portfolio section */
+.portfolio .badge {
+  color: #ff6b35;
+  width: fit-content;
+  font-weight: 600;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 15px;
+}
+
 .badge img {
   height: 20px;
   width: auto;
@@ -298,13 +308,13 @@ header {
   align-items: center;
   justify-content: space-between;
   width: 90%;
-  margin: 10% auto 0;
+  margin: 6% auto 0;
   gap: 45px;
 } 
 
 .badge-card{
-  height: 200px;
-  width: 300px;
+  height: 180px;
+  width: 250px;
   border-radius: 15px ;
   border: rgb(255, 255, 255,0.3) 1px solid;
   background-color: rgba(56, 53, 53, 0.5);
@@ -317,11 +327,10 @@ header {
 }
 
 .badge-card img {
-  height: 50px;
+  height: 40px;
   width: auto;
   margin-right: 0;
   align-self: center;
-
 }
 
 .badge-card > p {
@@ -346,8 +355,8 @@ header {
   color: rgb(190, 176, 176);
 }
 /* =========================================
-   🏢 About Section
-   ========================================= */
+ 🏢 About Section
+========================================= */
 
 .about-section {
   margin-top: 100px;
@@ -368,7 +377,7 @@ header {
 
 .about-content img{
   flex: 3;
-  height: 700px;
+  height: 600px;
   width: auto;
   box-sizing: border-box;
   border-radius: 15px;
@@ -387,7 +396,7 @@ header {
 }
 
 .about-content h2 {
-  font-size: 3.5rem;
+  font-size: 3.675rem;
   text-align: left;
   line-height: 1.3;
 }
@@ -458,6 +467,24 @@ body {
   max-width: 100%;
 }
 
+.services h2 {
+  font-size: 3.675rem;
+  line-height: 1.3;
+}
+
+.services h2 .highlight-text {
+  color: #ff6b35;
+}
+
+.portfolio h2 {
+  font-size: 3.675rem;
+  line-height: 1.3;
+}
+
+.portfolio h2 .highlight-text {
+  color: #ff6b35;
+}
+
 .services .service-cards {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -471,7 +498,7 @@ body {
 .card {
   background: white;
   border-radius: 12px;
-  padding: 30px;
+  padding: 27px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
   transition: all 0.3s ease;
   cursor: pointer;
@@ -487,15 +514,15 @@ body {
 }
 
 .card-icon {
-  width: 68px;
-  height: 68px;
+  width: 61px;
+  height: 61px;
   object-fit: cover;
   border-radius: 8px;
-  margin-bottom: 15px;
+  margin-bottom: 13px;
   transition: all 0.3s ease;
   align-self: flex-start;
   background-color: rgba(252, 125, 79, 0.15);
-  padding: 8px;
+  padding: 7px;
   box-sizing: border-box;
 }
 
@@ -504,18 +531,18 @@ body {
 }
 
 .card-title {
-  font-size: 1.8rem;
+  font-size: 1.62rem;
   font-weight: 700;
   color: var(--dark-color);
-  margin: 10px 0 10px 0;
+  margin: 9px 0 9px 0;
   text-align: left;
 }
 
 .card-description {
-  font-size: 1.2rem;
+  font-size: 1.08rem;
   color: #666;
-  line-height: 1.6;
-  margin: 10px 0 15px 0;
+  line-height: 1.5;
+  margin: 9px 0 13px 0;
   text-align: left;
 }
 
@@ -527,11 +554,11 @@ body {
 }
 
 .card-features li {
-  font-size: 1.15rem;
+  font-size: 1.04rem;
   color: #666;
-  padding: 8px 0 8px 25px;
+  padding: 7px 0 7px 22px;
   position: relative;
-  margin: 5px 0;
+  margin: 4px 0;
 }
 
 .card-features li:before {
@@ -544,27 +571,297 @@ body {
 }
 
 /* =========================================
-   📸 Projects Section
+   � Equipment Section
    ========================================= */
-.project-gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 15px;
-  margin-top: 30px;
+.equipment {
+  background-color: #f5f5f5;
+  padding: 80px 20px;
 }
 
-.project-gallery img {
+.equipment .container {
+  text-align: center;
   width: 100%;
-  border-radius: 10px;
-  transition: var(--transition);
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.project-gallery img:hover {
+.equipment-description {
+  font-size: 1.1rem;
+  color: #666;
+  text-align: center;
+  max-width: 800px;
+  margin: 20px auto 50px;
+  line-height: 1.7;
+}
+
+.equipment h2 {
+  font-size: 2.5rem;
+  font-family: 'Oswald', sans-serif;
+  color: #1a1a1a;
+  margin: 15px 0;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.equipment h2 .highlight-text {
+  color: #ff6b35;
+}
+
+.equipment .badge {
+  display: inline-block;
+  background-color: #004aad;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 25px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 15px;
+}
+
+.equipment-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  max-width: 1200px;
+  margin: 40px auto 0;
+}
+
+/* Professional Equipment Card Design */
+.equipment-card {
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.equipment-card:hover {
+  box-shadow: 0 8px 20px rgba(0, 74, 173, 0.15);
+  transform: translateY(-4px);
+}
+
+/* Image Section */
+.equipment-image-section {
+  position: relative;
+  width: 100%;
+  height: 280px;
+  overflow: hidden;
+  background: linear-gradient(135deg, #f0f0f0, #e0e0e0);
+}
+
+.equipment-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.equipment-card:hover .equipment-image {
   transform: scale(1.05);
 }
 
+.category-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background-color: #ff6b35;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  z-index: 10;
+  box-shadow: 0 2px 6px rgba(255, 107, 53, 0.3);
+}
+
+/* Content Section */
+.equipment-content {
+  padding: 24px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.equipment-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0 0 8px 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+.equipment-card-description {
+  font-size: 0.95rem;
+  color: #666;
+  margin: 0 0 20px 0;
+  line-height: 1.5;
+  font-family: 'Poppins', sans-serif;
+}
+
+.equipment-tagline {
+  font-size: 0.95rem;
+  color: #666;
+  margin: 0 0 20px 0;
+  line-height: 1.5;
+}
+
+.specs-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  flex-grow: 1;
+}
+
+.spec-column {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.spec-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.spec-label {
+  font-size: 0.8rem;
+  color: #999;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+.spec-value {
+  font-size: 0.95rem;
+  color: #1a1a1a;
+  font-weight: 600;
+}
+
+.equipment-specs {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+}
+
+.equipment-specs li {
+  font-size: 0.9rem;
+  color: #555;
+  padding: 8px 0 8px 20px;
+  position: relative;
+  margin: 5px 0;
+  line-height: 1.5;
+  font-family: 'Poppins', sans-serif;
+}
+
+.equipment-specs li:before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #ff6b35;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+@media (max-width: 1024px) {
+  .equipment-cards {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
+}
+
+@media (max-width: 768px) {
+  .equipment {
+    padding: 60px 20px;
+  }
+
+  .equipment h2 {
+    font-size: 2rem;
+  }
+
+  .equipment-cards {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .equipment-image-section {
+    height: 240px;
+  }
+  
+  .equipment-title {
+    font-size: 1.15rem;
+  }
+
+  .specs-grid {
+    gap: 16px;
+  }
+
+  .spec-value {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .equipment {
+    padding: 40px 15px;
+  }
+
+  .equipment h2 {
+    font-size: 1.5rem;
+  }
+
+  .equipment-description {
+    font-size: 1rem;
+  }
+
+  .equipment-cards {
+    gap: 15px;
+  }
+  
+  .equipment-image-section {
+    height: 200px;
+  }
+
+  .equipment-content {
+    padding: 16px;
+  }
+
+  .equipment-title {
+    font-size: 1.05rem;
+  }
+
+  .equipment-tagline {
+    font-size: 0.85rem;
+    margin-bottom: 16px;
+  }
+
+  .specs-grid {
+    gap: 12px;
+  }
+
+  .spec-label {
+    font-size: 0.7rem;
+  }
+
+  .spec-value {
+    font-size: 0.85rem;
+  }
+
+  .category-badge {
+    font-size: 0.65rem;
+    padding: 5px 10px;
+  }
+}
+
 /* =========================================
-   📞 Contact Section
+   �📞 Contact Section
    ========================================= */
 .contact-form {
   display: flex;
@@ -573,6 +870,8 @@ body {
   max-width: 600px;
   margin: 0 auto;
 }
+
+
 
 .contact-form input,
 .contact-form textarea {
@@ -621,6 +920,148 @@ footer {
 }
 
 /* =========================================
+   ✨ Animations
+   ========================================= */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================================
+   🎯 Portfolio Section
+   ========================================= */
+.portfolio {
+  background-color: #f9f9f9;
+}
+
+.portfolio-description {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 40px;
+}
+
+/* Filter Buttons */
+.filter-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 50px;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  padding: 10px 22px;
+  border: 2px solid #ddd;
+  background-color: #fff;
+  color: var(--text-color);
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: var(--transition);
+  font-family: var(--font-main);
+}
+
+.filter-btn:hover {
+  border-color: var(--secondary-color);
+  color: var(--secondary-color);
+}
+
+.filter-btn.active {
+  background-color: var(--secondary-color);
+  color: #fff;
+  border-color: var(--secondary-color);
+}
+
+/* Portfolio Grid */
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.portfolio-card {
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+}
+
+.portfolio-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.portfolio-card.hidden {
+  display: none;
+}
+
+/* Card Image Section (50%) */
+.card-image-section {
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+  background-color: #f0f0f0;
+}
+
+.portfolio-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--transition);
+}
+
+.portfolio-card:hover .portfolio-image {
+  transform: scale(1.05);
+}
+
+/* Card Content Section */
+.card-content-section {
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.portfolio-card-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--dark-color);
+  margin-bottom: 12px;
+}
+
+.portfolio-card-description {
+  font-size: 0.95rem;
+  color: #666;
+  margin-bottom: 18px;
+  line-height: 1.5;
+}
+
+.material-spec {
+  font-size: 0.9rem;
+  color: #555;
+  padding-top: 15px;
+  border-top: 1px solid #eee;
+  margin-top: auto;
+  line-height: 1.6;
+}
+
+.material-spec strong {
+  color: var(--secondary-color);
+  font-weight: 700;
+}
+
+/* =========================================
    📱 Responsive Design
    ========================================= */
 @media (max-width: 768px) {
@@ -638,5 +1079,63 @@ footer {
 
   .section {
     padding: 60px 0;
+  }
+
+  /* Portfolio Responsive */
+  .portfolio-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .filter-buttons {
+    gap: 8px;
+    margin-bottom: 40px;
+  }
+
+  .filter-btn {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
+
+  .card-image-section {
+    height: 200px;
+  }
+
+  .card-content-section {
+    padding: 20px;
+  }
+
+  .portfolio-card-title {
+    font-size: 1.2rem;
+  }
+
+  .portfolio-card-description {
+    font-size: 0.9rem;
+  }
+
+  .material-spec {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .filter-buttons {
+    flex-direction: column;
+  }
+
+  .filter-btn {
+    width: 100%;
+  }
+
+  .card-image-section {
+    height: 180px;
+  }
+
+  .portfolio-card-title {
+    font-size: 1.1rem;
   }
 }

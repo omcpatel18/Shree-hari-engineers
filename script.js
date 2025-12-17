@@ -52,7 +52,7 @@ Full details are in your Gmail inbox.`;
         // 3) Show success message on website
         statusEl.style.display = "block";
         statusEl.style.color = "green";
-        statusEl.textContent = "Thank you! Your message has been sent.";
+        statusEl.textContent = "Thanks — your request is received. We'll contact you shortly with next steps.";
 
         // Clear form
         form.reset();
@@ -63,10 +63,40 @@ Full details are in your Gmail inbox.`;
       console.error(error);
       statusEl.style.display = "block";
       statusEl.style.color = "red";
-      statusEl.textContent = "Error sending message. Please try again.";
+      statusEl.textContent = "Error sending request. Please try again.";
     } finally {
       submitBtn.disabled = false;
-      submitBtn.textContent = "Send Message";
+      submitBtn.textContent = "Send for Quote";
     }
   });
 
+  /* =========================================
+     🎯 Portfolio Filter Functionality
+     ========================================= */
+  const filterButtons = document.querySelectorAll(".filter-btn");
+  const portfolioCards = document.querySelectorAll(".portfolio-card");
+
+  filterButtons.forEach((button) => {
+    button.addEventListener("click", function () {
+      const filterValue = this.getAttribute("data-filter");
+
+      // Update active button
+      filterButtons.forEach((btn) => btn.classList.remove("active"));
+      this.classList.add("active");
+
+      // Filter cards
+      portfolioCards.forEach((card) => {
+        const cardCategory = card.getAttribute("data-category");
+
+        if (filterValue === "all" || cardCategory === filterValue) {
+          card.classList.remove("hidden");
+          // Trigger reflow for animation
+          setTimeout(() => {
+            card.style.animation = "fadeIn 0.3s ease-in";
+          }, 10);
+        } else {
+          card.classList.add("hidden");
+        }
+      });
+    });
+  });
