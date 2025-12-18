@@ -1,4 +1,37 @@
 
+/* =========================================
+   🍔 Mobile Navigation Toggle
+   ========================================= */
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('nav-links');
+const body = document.body;
+
+if (hamburger && navLinks) {
+  hamburger.addEventListener('click', function() {
+    hamburger.classList.toggle('active');
+    navLinks.classList.toggle('active');
+    body.classList.toggle('menu-open');
+  });
+
+  // Close menu when clicking on a nav link
+  navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      hamburger.classList.remove('active');
+      navLinks.classList.remove('active');
+      body.classList.remove('menu-open');
+    });
+  });
+
+  // Close menu when clicking outside
+  document.addEventListener('click', function(e) {
+    if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) {
+      hamburger.classList.remove('active');
+      navLinks.classList.remove('active');
+      body.classList.remove('menu-open');
+    }
+  });
+}
+
   const form = document.getElementById("contactForm");
   const submitBtn = document.getElementById("submitBtn");
   const statusEl = document.getElementById("formStatus");
