@@ -216,7 +216,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Your WhatsApp number (with country code, WITHOUT + or spaces)
   // Example: "919876543210"
-  const whatsappNumber = "918320673087"; // ← replace with your number
+  const whatsappNumber = "919426533653"; // ← replace with your number
 
   form.addEventListener("submit", async function (e) {
     e.preventDefault(); // prevent normal browser submit
